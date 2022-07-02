@@ -8,7 +8,7 @@ import br.com.skw.folha.core.DriverFactory;
 public class LoginPage extends BasePage {
 
 	public void acessarTelaInicial() {
-		DriverFactory.getDriver().get("https://folhapagorclrc411.qa.sankhya.com.br/");
+		DriverFactory.getDriver().get("https://folhahomologrc411.qa.sankhya.com.br/");
 	}
 
 	public void setUsuario(String usuario) {

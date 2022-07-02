@@ -70,7 +70,7 @@ public class BasePage {
 	}
 	
 	public List<String> obterValoresCombo(String id) {
-		WebElement element = getDriver().findElement(By.id("elementosForm:esportes"));
+		WebElement element = getDriver().findElement(By.id(id));
 		Select combo = new Select(element);
 		List<WebElement> allSelectedOptions = combo.getAllSelectedOptions();
 		List<String> valores = new ArrayList<String>();
