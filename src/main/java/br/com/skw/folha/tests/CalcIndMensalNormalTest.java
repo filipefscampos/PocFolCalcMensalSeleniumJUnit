@@ -19,10 +19,17 @@ public class CalcIndMensalNormalTest extends BaseTest {
 	@Test
 	public void calcMensalIndividual() {
 		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
 		menuPage.abreTelaCalculoFolha();
+		
 		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		calcPage.abreCalculoIndividual();
+		
+		calcPage.abreCardCalculoIndividualMensal();
+		
+		calcPage.preencheReferencia("07/2022");
+		calcPage.preencheDataPagamento("29/07/2022");
 		
 	}
 	

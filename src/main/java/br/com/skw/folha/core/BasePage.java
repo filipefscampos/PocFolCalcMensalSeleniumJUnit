@@ -173,6 +173,10 @@ public class BasePage {
 		getDriver().switchTo().frame(id);
 	}
 	
+	public void entrarFrame(WebElement by) {
+		getDriver().switchTo().frame(by);
+	}
+	
 	public void sairFrame(){
 		getDriver().switchTo().defaultContent();
 	}
