@@ -8,6 +8,7 @@ import java.util.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -21,6 +22,12 @@ public class BasePage {
 
 	public void escrever(String id_campo, String texto){
 		escrever(By.id(id_campo), texto);
+	}
+	
+	public void escreverDepoisTab(By by, String texto){
+		getDriver().findElement(by).clear();
+		getDriver().findElement(by).sendKeys(texto);
+		getDriver().findElement(by).sendKeys(Keys.TAB);
 	}
 	
 	public String obterValorCampo(String id_campo) {
