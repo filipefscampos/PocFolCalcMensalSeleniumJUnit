@@ -74,5 +74,19 @@ public class CalculoPage extends BasePage {
 		clicarBotao(By.xpath("//button[@id='testCalcBtn']"));
 		sairFrame();
 	}
+	
+	public void clicarSessaoProventos() {
+		entrarFrameCalcInd();
+		clicarBotao(By.xpath("(//div[@id='openToggleClick'])[1]"));
+		sairFrame();
+	}
+	
+	public String pegarValoresDeCalculo(String xpath) {
+		entrarFrameCalcInd();
+		String valor = obterTexto(By.xpath(xpath));
+		System.out.println("Retorno " + valor);
+		sairFrame();
+		return valor;
+	}
 
 }
