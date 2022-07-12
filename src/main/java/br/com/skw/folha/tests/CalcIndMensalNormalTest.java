@@ -55,6 +55,27 @@ public class CalcIndMensalNormalTest extends BaseTest {
 		Assertions.assertEquals("30.000", calcPage.pegarValoresDeCalculo("//p[@id='prov-ind-11']"));
 		Thread.sleep(1000);
 		calcPage.clicarSessaoProventos();
+		Thread.sleep(1000);
+		
+		calcPage.clicarSessaoDescontos();
+		Thread.sleep(1000);
+		Assertions.assertEquals("9010", calcPage.pegarValoresDeCalculo("(//p[@class='center-self ng-binding'])[5]"));
+		Assertions.assertEquals("INSS", calcPage.pegarValoresDeCalculo("(//p[@class='center-self ng-binding'])[6]"));
+		Assertions.assertEquals("9040", calcPage.pegarValoresDeCalculo("(//p[@class='center-self ng-binding'])[7]"));
+		Assertions.assertEquals("IRRF", calcPage.pegarValoresDeCalculo("(//p[@class='center-self ng-binding'])[8]"));
+		Thread.sleep(1000);
+		calcPage.clicarSessaoDescontos();
+		Thread.sleep(1000);
+		
+		calcPage.clicarConfirmarCalculo();
+		Thread.sleep(1000);
+		calcPage.clicarSalvarCalculo();
+		Thread.sleep(2000);
+		calcPage.clicarDeletarCalculo();
+		Thread.sleep(1000);
+		calcPage.clicarSalvarDelecaoCalculo();
+		Thread.sleep(2000);
+
 	}
 	
 }
