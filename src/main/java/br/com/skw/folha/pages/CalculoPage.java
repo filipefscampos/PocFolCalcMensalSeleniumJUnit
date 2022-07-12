@@ -81,12 +81,43 @@ public class CalculoPage extends BasePage {
 		sairFrame();
 	}
 	
+	public void clicarSessaoDescontos() {
+		entrarFrameCalcInd();
+		//clicarBotao(By.xpath("(//div[@id='openToggleClick'])[2]"));
+		clicarBotao(By.xpath("(//md-icon[@id='open'])[2]"));
+		sairFrame();
+	}
+	
 	public String pegarValoresDeCalculo(String xpath) {
 		entrarFrameCalcInd();
 		String valor = obterTexto(By.xpath(xpath));
 		System.out.println("Retorno " + valor);
 		sairFrame();
 		return valor;
+	}
+	
+	public void clicarConfirmarCalculo() {
+		entrarFrameCalcInd();
+		clicarBotao(By.xpath("(//button[contains(@class,'fill-width display-flex')])[1]"));
+		sairFrame();
+	}
+	
+	public void clicarSalvarCalculo() {
+		entrarFrameCalcInd();
+		clicarBotao(By.xpath("//button[@id='SimplePopupConfirmButton']"));
+		sairFrame();
+	}
+	
+	public void clicarDeletarCalculo() {
+		entrarFrameCalcInd();
+		clicarBotao(By.xpath("(//button[@id='deletaBtn'])[1]"));
+		sairFrame();
+	}
+	
+	public void clicarSalvarDelecaoCalculo() {
+		entrarFrameCalcInd();
+		clicarBotao(By.xpath("//button[@id='excluiFolhaOptBtnSim']"));
+		sairFrame();
 	}
 
 }
